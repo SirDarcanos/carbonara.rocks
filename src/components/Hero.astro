@@ -4,14 +4,12 @@ import Label from "./Label.astro";
 
 <section
   id="hero"
-  class="border-accent bg-surface position-relative mx-auto mt-10 max-w-5xl border-2 p-[2px]"
+  class="border-accent bg-surface position-relative mx-auto mt-10 max-w-5xl border-2 p-0.5"
 >
-  <div
-    class="border-accent flex min-h-144 min-w-[100%] flex-col items-center justify-center gap-5 border-1 p-10 text-center"
-  >
-    <Label label="The authentic recipe" />
+  <div class="border-accent min-h-144 min-w-full space-y-6 border p-10 text-center">
+    <Label label="The authentic Italian recipe" />
 
-    <hr class="border-accent w-15" />
+    <hr class="border-accent mx-auto w-15" />
 
     <h2 class="text-8xl font-semibold">
       Carbonara<br /><span class="text-accent italic">the Italian way</span>
@@ -23,13 +21,18 @@ import Label from "./Label.astro";
       the soul.
     </p>
 
-    <nav class="text-align-center text-md items-center gap-2 text-sm">
+    <nav class="text-md mt-10 text-sm font-semibold">
       <a
         href="#recipe"
-        class="bg-accent text-bold text-md px-5 py-3 tracking-[0.12em] text-white uppercase"
+        class="bg-accent text-bold text-md mr-3 inline-block px-5 py-3 tracking-[0.12em] text-white uppercase"
         >Jump to the recipe</a
       >
-      <a href="#what-is-it" class="underline">first, what is it?</a>
+
+      <a
+        href="#what-is-it"
+        class="border-accent text-accent text-bold text-md mr-3 inline-block border px-5 py-3 tracking-[0.12em] uppercase"
+        >What is it</a
+      >
     </nav>
   </div>
 </section>
