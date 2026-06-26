@@ -4,8 +4,8 @@ import Button from "./Button.astro";
 ---
 
 <section id="hero" class="border-accent bg-surface w-full scroll-mt-30 border-2 p-0.5">
-  <div class="border-accent min-h-144 min-w-full space-y-6 border p-10 text-center">
-    <Label label="The authentic Italian recipe" />
+  <div class="border-accent min-h-144 min-w-full space-y-6 border p-6 text-center md:p-10">
+    <Label label="The authentic Italian carbonara" />
 
     <hr class="border-accent mx-auto w-15" />
 
@@ -19,7 +19,9 @@ import Button from "./Button.astro";
       the soul.
     </p>
 
-    <nav class="mt-10 flex items-center justify-center gap-4 text-sm font-semibold">
+    <nav
+      class="mt-10 flex flex-col items-center justify-center gap-4 text-sm font-semibold sm:flex-row"
+    >
       <Button href="#recipe">Jump to the recipe</Button>
       <Button href="#what-is-carbonara" variant="outline">What is it</Button>
     </nav>

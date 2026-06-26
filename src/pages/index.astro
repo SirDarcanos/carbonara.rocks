@@ -52,7 +52,12 @@ const recipeSchema = {
 ---
 
 <Layout image={recipeImage}>
-  <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(recipeSchema)} />
+  <script
+    type="application/ld+json"
+    is:inline
+    slot="head"
+    set:html={JSON.stringify(recipeSchema)}
+  />
 
   <Header />
 
@@ -130,7 +135,7 @@ const recipeSchema = {
     </Container>
 
     <Container class="mt-20">
-      <section class="w-full space-y-6 border-[1.5px] border-red-900 bg-red-100/40 p-10">
+      <section class="w-full space-y-6 border-[1.5px] border-red-900 bg-red-100/40 p-6 md:p-10">
         <h2
           class="font-display before:text-accent text-4xl font-bold before:mr-4 before:content-['×']"
         >
@@ -162,12 +167,15 @@ const recipeSchema = {
 
     <section id="recipe" class="border-line bg-band mt-20 scroll-mt-10 border-t border-b py-20">
       <div class="mx-auto max-w-sm px-6 text-center">
-        <Heading label="The Italian carbonara recipe" title="Let’s make magic in the kitchen" />
+        <Heading
+          label="The authentic Italian carbonara recipe"
+          title="Let’s make magic in the kitchen"
+        />
       </div>
 
       <Container class="mt-15">
-        <div class="grid w-full grid-cols-1 gap-12 md:grid-cols-[1fr_2fr]">
-          <div class="border-accent bg-surface sticky top-24 self-start border p-1">
+        <div class="grid w-full grid-cols-1 gap-12 md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_2fr]">
+          <div class="border-accent bg-surface top-24 self-start border p-1 md:sticky">
             <div class="border-line bg-surface border p-6">
               <div class="mb-2 flex items-center justify-between">
                 <h3>Ingredients</h3>
