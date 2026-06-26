@@ -1,16 +1,20 @@
 ---
 import Label from "./Label.astro";
+import Button from "./Button.astro";
 ---
 
-<section id="hero" class="border-accent bg-surface mx-auto mt-10 max-w-5xl border-2 p-0.5">
+<section
+  id="hero"
+  class="border-accent bg-surface mx-auto mt-10 max-w-5xl scroll-mt-30 border-2 p-0.5"
+>
   <div class="border-accent min-h-144 min-w-full space-y-6 border p-10 text-center">
     <Label label="The authentic Italian recipe" />
 
     <hr class="border-accent mx-auto w-15" />
 
-    <h2 class="text-6xl font-semibold md:text-8xl">
+    <h1 class="text-6xl font-semibold md:text-8xl">
       Carbonara<br /><span class="text-accent italic">the Italian way</span>
-    </h2>
+    </h1>
 
     <p class="mx-auto max-w-lg text-xl md:text-2xl">
       No food-blogger backstory, no partner ingredients, no money to make. Just an Italian who loves
@@ -18,18 +22,9 @@ import Label from "./Label.astro";
       the soul.
     </p>
 
-    <nav class="mt-10 text-sm font-semibold">
-      <a
-        href="#recipe"
-        class="bg-accent mr-3 inline-block px-5 py-3 tracking-[0.12em] text-white uppercase"
-        >Jump to the recipe</a
-      >
-
-      <a
-        href="#what-is-carbonara"
-        class="border-accent text-accent mr-3 inline-block border px-5 py-3 tracking-[0.12em] uppercase"
-        >What is it</a
-      >
+    <nav class="mt-10 flex items-center justify-center gap-4 text-sm font-semibold">
+      <Button href="#recipe">Jump to the recipe</Button>
+      <Button href="#what-is-carbonara" variant="outline">What is it</Button>
     </nav>
   </div>
 </section>

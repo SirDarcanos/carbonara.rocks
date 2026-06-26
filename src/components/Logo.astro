@@ -1,11 +1,12 @@
 ---
+import Wordmark from "./Wordmark.astro";
 import { Image } from "astro:assets";
 import monogram from "../assets/favicon.svg";
 ---
 
-<h1 id="title" class="text-2xl leading-[0.92] font-bold tracking-tight">
-  <a href="#header" class="text-ink flex items-center gap-2">
-    <Image src={monogram} alt="" width={24} />
-    <span>Carbonara<span class="text-accent">.</span>Rocks</span>
+<div id="title" class="text-2xl leading-[0.92] font-bold tracking-tight">
+  <a href="#hero" class="text-ink flex items-center gap-2">
+    <Image src={monogram} alt="" width={24} priority />
+    <Wordmark />
   </a>
-</h1>
+</div>

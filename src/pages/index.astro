@@ -103,7 +103,13 @@ const steps = [
   <Header />
   <Hero />
 
-  <Image src={carbonara} alt="Spaghetti Carbonara on a black plate" copy="Photo by Javier Somoza" />
+  <Image
+    src={carbonara}
+    alt="Spaghetti Carbonara on a black plate"
+    copy="Photo by Javier Somoza"
+    fetchpriority="high"
+    loading="eager"
+  />
 
   <section
     id="what-is-carbonara"
@@ -123,7 +129,13 @@ const steps = [
       </p>
     </div>
     <div>
-      <Image src={pecorino} alt="Pecorino cheese" copy="Photo by Jon Sullivan" />
+      <Image
+        src={pecorino}
+        alt="Pecorino cheese"
+        copy="Photo by Jon Sullivan"
+        fetchpriority="high"
+        loading="eager"
+      />
     </div>
   </section>
 
@@ -230,6 +242,8 @@ const steps = [
       formats={["avif", "webp", "jpeg"]}
       alt="Spaghetti carbonara in a black plate"
       sizes="100vw"
+      decoding="async"
+      loading="lazy"
     />
     <figcaption
       class="text-muted bg-surface/85 absolute right-3 bottom-3 px-3 py-1 text-sm backdrop-blur"
