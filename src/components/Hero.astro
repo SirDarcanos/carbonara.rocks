@@ -2,35 +2,32 @@
 import Label from "./Label.astro";
 ---
 
-<section
-  id="hero"
-  class="border-accent bg-surface position-relative mx-auto mt-10 max-w-5xl border-2 p-0.5"
->
+<section id="hero" class="border-accent bg-surface mx-auto mt-10 max-w-5xl border-2 p-0.5">
   <div class="border-accent min-h-144 min-w-full space-y-6 border p-10 text-center">
     <Label label="The authentic Italian recipe" />
 
     <hr class="border-accent mx-auto w-15" />
 
-    <h2 class="text-8xl font-semibold">
+    <h2 class="text-6xl font-semibold md:text-8xl">
       Carbonara<br /><span class="text-accent italic">the Italian way</span>
     </h2>
 
-    <p class="mx-auto max-w-lg text-2xl">
+    <p class="mx-auto max-w-lg text-xl md:text-2xl">
       No food-blogger backstory, no partner ingredients, no money to make. Just an Italian who loves
       carbonara, sharing how to stick to the roots — and how to bend them a little without losing
       the soul.
     </p>
 
-    <nav class="text-md mt-10 text-sm font-semibold">
+    <nav class="mt-10 text-sm font-semibold">
       <a
         href="#recipe"
-        class="bg-accent text-bold text-md mr-3 inline-block px-5 py-3 tracking-[0.12em] text-white uppercase"
+        class="bg-accent mr-3 inline-block px-5 py-3 tracking-[0.12em] text-white uppercase"
         >Jump to the recipe</a
       >
 
       <a
         href="#what-is-it"
-        class="border-accent text-accent text-bold text-md mr-3 inline-block border px-5 py-3 tracking-[0.12em] uppercase"
+        class="border-accent text-accent mr-3 inline-block border px-5 py-3 tracking-[0.12em] uppercase"
         >What is it</a
       >
     </nav>

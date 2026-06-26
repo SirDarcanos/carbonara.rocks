@@ -9,13 +9,6 @@ import "../styles/global.css";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script is:inline>
-      const pref = localStorage.getItem("theme") ?? "system";
-      const systemDark = matchMedia("(prefers-color-scheme: dark)").matches;
-      const isDark = pref === "dark" || (pref === "system" && systemDark);
-      document.documentElement.classList.toggle("dark", isDark);
-    </script>
-
     <link rel="icon" type="image/svg+xml" href={favicon} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,9 +19,9 @@ import "../styles/global.css";
 
     <meta name="generator" content={Astro.generator} />
 
-    <title>Carbonara Rocks - Authetic Italian Carbonara Recipe</title>
+    <title>Carbonara Rocks - Authentic Italian Carbonara Recipe</title>
   </head>
-  <body class="bg-background text-ink font-body leading-relaxedantialiased text-lg antialiased">
+  <body>
     <slot />
   </body>
 </html>

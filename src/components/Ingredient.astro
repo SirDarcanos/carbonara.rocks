@@ -5,15 +5,15 @@ interface Props {
   quantity: string;
 }
 
-const props = Astro.props as Props;
+const { ingredient, description, quantity } = Astro.props;
 ---
 
 <li>
-  <div class="items-top flex justify-between">
+  <div class="flex justify-between">
     <h3 class="text-xl font-bold">
-      {props.ingredient}
-      <br /><span class="text-muted text-base font-normal italic">{props.description}</span>
+      {ingredient}
+      <br /><span class="text-muted text-base font-normal italic">{description}</span>
     </h3>
-    <p class="text-accent text-lg font-bold">{props.quantity}</p>
+    <p class="text-accent text-lg font-bold">{quantity}</p>
   </div>
 </li>

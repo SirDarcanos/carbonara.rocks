@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-display: "Cormorant Garamond", Georgia, serif;
@@ -20,22 +19,9 @@
   --color-amber: #c98a4a;
 }
 
-.dark {
-  --color-background: #1c130d;
-  --color-surface: #241813;
-  --color-band: #2f2118;
-  --color-line: #3d2c1f;
-
-  --color-ink: #f3e8cf;
-  --color-muted: #c2ad86;
-  --color-subtle: #948059;
-
-  --color-accent: #cf4a2c;
-}
-
 @layer base {
   body {
-    @apply bg-background text-ink font-body leading-relaxed;
+    @apply bg-background text-ink font-body text-lg leading-relaxed antialiased;
   }
   h1,
   h2 {
