@@ -98,9 +98,42 @@ const steps = [
       "Plate it, top with more cheese and black pepper, and serve at once. Wait too long and the sauce dries out and the pasta turns sticky.",
   },
 ];
+
+const recipeImage = new URL(carbonara.src, Astro.site).toString();
+
+const recipeSchema = {
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  name: "Authentic Spaghetti Carbonara",
+  image: [recipeImage],
+  author: { "@type": "Person", name: "Nicola Mustone" },
+  description:
+    "The authentic Italian carbonara — eggs, pecorino, guanciale, and a good crack of black pepper. No cream, ever.",
+  recipeCuisine: "Italian",
+  recipeCategory: "Main course",
+  keywords: "carbonara, authentic carbonara, carbonara without cream, guanciale, pecorino",
+  recipeYield: "2 servings",
+  prepTime: "PT10M",
+  cookTime: "PT15M",
+  totalTime: "PT25M",
+  recipeIngredient: [
+    "150 g spaghetti (or any pasta)",
+    "3 egg yolks",
+    "200 g guanciale (or diced bacon)",
+    "Pecorino Romano, to taste",
+    "Salt and black pepper, to taste",
+  ],
+  recipeInstructions: steps.map((step) => ({
+    "@type": "HowToStep",
+    name: step.title,
+    text: step.description,
+  })),
+};
 ---
 
-<Layout>
+<Layout image={recipeImage}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(recipeSchema)} />
+
   <Header />
 
   <main id="main">
