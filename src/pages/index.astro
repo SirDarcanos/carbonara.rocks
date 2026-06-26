@@ -7,9 +7,14 @@ import Image from "../components/Image.astro";
 import Label from "../components/Label.astro";
 import Heading from "../components/Heading.astro";
 import Swap from "../components/Swap.astro";
+import Ingredient from "../components/Ingredient.astro";
+import Step from "../components/Step.astro";
+
+import { Picture } from "astro:assets";
 
 import carbonara from "../assets/italian-spaghetti-carbonara.jpg";
 import pecorino from "../assets/pecorino-romano-cheese.jpg";
+import plate from "../assets/carbonara-on-table.jpg";
 
 const swaps = [
   {
@@ -29,6 +34,67 @@ const swaps = [
     to: "a hard cheese",
     description:
       "Hard to replace, but if the salty flavor is too much, use another hard cheese. Never anything creamy, fresh, or sweet.",
+  },
+];
+
+const ingredients = [
+  {
+    ingredient: "Spaghetti",
+    description: "or any pasta",
+    quantity: "400 g",
+  },
+  {
+    ingredient: "Eggs",
+    description: "1 per person, +1 per two",
+    quantity: "3 yolks",
+  },
+  {
+    ingredient: "Pecorino Romano",
+    description: "go by hheart, adjust to taste",
+    quantity: "q.b.",
+  },
+  {
+    ingredient: "Guanciale",
+    description: "or diced bacon, less if you like",
+    quantity: "200 g",
+  },
+  {
+    ingredient: "Salt & black pepper",
+    description: "careful — pecorino is salty",
+    quantity: "to taste",
+  },
+];
+
+const steps = [
+  {
+    step: "01",
+    title: "Prepare the guanciale",
+    description:
+      "Dice the guanciale (or bacon) and sear over medium heat. No oil — the fat renders out on its own. Cook just shy of too crunchy, then kill the heat.",
+  },
+  {
+    step: "02",
+    title: "Cook the pasta",
+    description:
+      "Bring a large pot of water to a boil, salt it once it’s bubbling, and cook the pasta to al dente — firm to the bite but cooked through.",
+  },
+  {
+    step: "03",
+    title: "Make the sauce",
+    description:
+      "Beat the egg yolks with grated pecorino, salt, and pepper. Keep adding cheese until it’s creamy yet thick. Go easy on the salt — pecorino is salty.",
+  },
+  {
+    step: "04",
+    title: "Combine pasta and sauce",
+    description:
+      "Reserve a spoonful of pasta water. Drain, return the pasta to the pan (heat OFF), mix in the guanciale, then the egg-cheese mixture. Stir vigorously. Loosen with pasta water if needed.",
+  },
+  {
+    step: "05",
+    title: "Serve immediately",
+    description:
+      "Plate it, top with more cheese and black pepper, and serve at once. Wait too long and the sauce dries out and the pasta turns sticky.",
   },
 ];
 ---
@@ -120,6 +186,58 @@ const swaps = [
       </div>
     </div>
   </section>
+
+  <section id="recipe" class="border-line bg-band mt-20 border-t border-b py-20">
+    <div class="mx-auto max-w-sm text-center">
+      <Heading label="The Italian carbonara recipe" title="Let’s make magic in the kitchen" />
+    </div>
+
+    <div class="mx-auto mt-15 grid max-w-5xl grid-cols-[1fr_2fr] gap-12">
+      <div class="border-accent bg-surface border p-1">
+        <div class="border-line bg-surface border p-6">
+          <h3>Ingredients</h3>
+          <ul class="[&>li]:border-line mt-6 [&>li]:border-t [&>li]:py-3">
+            {ingredients.map((ingredient) => <Ingredient {...ingredient} />)}
+          </ul>
+        </div>
+      </div>
+
+      <div class="mb-10">
+        <div class="mb-2 flex items-center justify-between">
+          <h3>Instructions</h3>
+          <p class="text-subtle font-smeibold text-sm font-semibold">0 of 5 steps</p>
+        </div>
+        <p class="text-subtle border-line font-display mb-10 border-t-3 pt-2 font-semibold italic">
+          Tap a step as you go - the heat does most of the work.
+        </p>
+
+        {steps.map((step) => <Step {...step} />)}
+      </div>
+    </div>
+  </section>
+
+  <section id="ending" class="mx-auto mt-20 max-w-2xl text-center">
+    <Heading label="One last thing" title="“But what if I want to add cream?”" />
+
+    <p class="font-accent mt-10 text-2xl">
+      Well… just add it. But <span class="text-accent italic">you’re not making carbonara</span>.
+      You’re making pasta with cream and bacon. Don’t fool yourself.
+    </p>
+  </section>
+
+  <figure class="relative mx-auto mt-20">
+    <Picture
+      src={plate}
+      formats={["avif", "webp", "jpeg"]}
+      alt="Spaghetti carbonara in a black plate"
+      sizes="100vw"
+    />
+    <figcaption
+      class="text-muted bg-surface/85 absolute right-3 bottom-3 px-3 py-1 text-sm backdrop-blur"
+    >
+      Photo by Leonardo Cirimbelli
+    </figcaption>
+  </figure>
 
   <Footer />
 </Layout>

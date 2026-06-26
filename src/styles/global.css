@@ -33,11 +33,24 @@
   --color-accent: #cf4a2c;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-display);
+@layer base {
+  body {
+    @apply bg-background text-ink font-body leading-relaxed;
+  }
+  h1,
+  h2 {
+    @apply font-display text-5xl font-bold;
+  }
+  h3 {
+    @apply font-display text-3xl font-bold;
+  }
+  h4 {
+    @apply font-display text-2xl font-bold;
+  }
+  p {
+    @apply text-ink;
+  }
+  a {
+    @apply text-accent;
+  }
 }
