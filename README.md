@@ -1,46 +1,39 @@
-# Astro Starter Kit: Basics
+# Carbonara Rocks
 
-```sh
-npm create astro@latest -- --template basics
-```
+The authentic Italian carbonara recipe — eggs, Pecorino Romano, guanciale, and black pepper. No cream, ever.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+🔗 Live site: [carbonara.rocks](https://carbonara.rocks)
 
-## 🚀 Project Structure
+Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com) (v4, CSS-first config). Static, no client-side JavaScript.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Project structure
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── public/              Static files copied as-is (favicon)
+├── src/
+│   ├── assets/          Images + logo (optimized by Astro's image pipeline)
+│   ├── components/      Reusable .astro components (Header, Hero, Step, …)
+│   ├── layouts/         Layout.astro — the shared page shell
+│   ├── pages/           Routes (index.astro is the homepage)
+│   └── styles/          global.css — Tailwind import + @theme tokens
+└── astro.config.mjs     Astro config (Tailwind via the Vite plugin)
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Theme colors, fonts, and base typography live in [`src/styles/global.css`](src/styles/global.css) using Tailwind v4's `@theme` and `@layer base` — there is no `tailwind.config.js`.
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+Run from the project root:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command             | Action                                          |
+| :------------------ | :---------------------------------------------- |
+| `npm install`       | Install dependencies                            |
+| `npm run dev`       | Start the dev server at `localhost:4321`        |
+| `npm run build`     | Build the production site to `./dist/`          |
+| `npm run format`    | Format with Prettier (`format:check` to verify) |
+| `npm run astro ...` | Run Astro CLI commands (e.g. `astro check`)     |
 
-## 👀 Want to learn more?
+## 📄 License
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[MIT](LICENSE) © Nicola Mustone
