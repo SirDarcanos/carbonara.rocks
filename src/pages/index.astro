@@ -208,7 +208,7 @@ const steps = [
         <div class="border-line bg-surface border p-6">
           <div class="mb-2 flex items-center justify-between">
             <h3>Ingredients</h3>
-            <p class="text-subtle text-sm font-semibold">For 2 persons</p>
+            <p class="text-muted text-sm font-semibold">For 2 persons</p>
           </div>
           <ul class="[&>li]:border-line mt-6 [&>li]:border-t [&>li]:py-3">
             {ingredients.map((ingredient) => <Ingredient {...ingredient} />)}
@@ -219,7 +219,7 @@ const steps = [
       <div>
         <div class="mb-2 flex items-center justify-between">
           <h3>Instructions</h3>
-          <p class="text-subtle text-sm font-semibold">The heat does most of the work.</p>
+          <p class="text-muted text-sm font-semibold">The heat does most of the work.</p>
         </div>
 
         {steps.map((step) => <Step {...step} />)}
