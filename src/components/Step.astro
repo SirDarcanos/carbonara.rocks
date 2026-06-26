@@ -1,9 +1,7 @@
 ---
-interface Props {
-  step: string;
-  title: string;
-  description: string;
-}
+import type { Step } from "../data/recipe.ts";
+
+type Props = Step;
 
 const { step, title, description } = Astro.props;
 ---

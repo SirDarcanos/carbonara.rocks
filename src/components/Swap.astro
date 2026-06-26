@@ -1,9 +1,7 @@
 ---
-interface Props {
-  from: string;
-  to: string;
-  description: string;
-}
+import type { Swap } from "../data/recipe.ts";
+
+type Props = Swap;
 
 const { from, to, description } = Astro.props;
 ---

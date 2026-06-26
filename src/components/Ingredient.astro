@@ -1,9 +1,7 @@
 ---
-interface Props {
-  ingredient: string;
-  description: string;
-  quantity: string;
-}
+import type { Ingredient } from "../data/recipe.ts";
+
+type Props = Ingredient;
 
 const { ingredient, description, quantity } = Astro.props;
 ---
