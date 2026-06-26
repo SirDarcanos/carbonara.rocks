@@ -2,11 +2,17 @@
 import Nav from "./Nav.astro";
 import Logo from "./Logo.astro";
 import Container from "./Container.astro";
+
+interface Props {
+  minimal?: boolean;
+}
+
+const { minimal = false } = Astro.props;
 ---
 
 <header class="bg-background/90 border-line sticky top-0 z-50 border-b backdrop-blur">
-  <Container class="flex items-center justify-between py-4">
+  <Container class={`flex items-center py-4 ${minimal ? "justify-center" : "justify-between"}`}>
     <Logo />
-    <Nav />
+    {!minimal && <Nav />}
   </Container>
 </header>

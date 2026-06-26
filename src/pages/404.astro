@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Container from "../components/Container.astro";
+import Label from "../components/Label.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout
+  title="Page not found (404) — Carbonara Rocks"
+  description="This page isn't on the menu. Head back to the authentic Italian carbonara recipe."
+>
+  <meta name="robots" content="noindex" slot="head" />
+
+  <div class="flex min-h-screen flex-col">
+    <Header minimal />
+
+    <main id="main" class="flex flex-1 items-center">
+      <Container class="w-full py-20 text-center">
+        <Label label="Error 404" />
+        <h1 class="font-display mt-4 text-7xl font-bold md:text-8xl">This page is overcooked</h1>
+        <p class="mx-auto mt-6 max-w-md text-xl">
+          We looked everywhere — in the pan, under the guanciale, behind the pecorino — but this
+          page isn't on the menu.
+        </p>
+        <div class="mt-10 flex justify-center">
+          <Button href="/">Back to the recipe</Button>
+        </div>
+      </Container>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>
