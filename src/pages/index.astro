@@ -20,7 +20,10 @@ import pecorino from "../assets/pecorino-romano-cheese.jpg";
     copy="Photo by Javier Somoza, CC BY-SA 4.0"
   />
 
-  <section class="mx-auto grid max-w-5xl gap-12 md:grid-cols-2 md:items-center">
+  <section
+    id="what-is-carbonara"
+    class="mx-auto grid max-w-5xl gap-12 md:grid-cols-2 md:items-center"
+  >
     <div class="space-y-4">
       <Label label="The essence" />
       <h2 class="font-display text-5xl font-bold">What is carbonara?</h2>
@@ -36,6 +39,21 @@ import pecorino from "../assets/pecorino-romano-cheese.jpg";
     </div>
     <div>
       <Image src={pecorino} alt="Pecorino cheese" copy="Photo by Jon Sullivan, Public Domain" />
+    </div>
+  </section>
+
+  <section id="sauce" class="bg-ink text-surface mt-20 py-20">
+    <div class="mx-auto max-w-xl space-y-10 text-center">
+      <Label label="What the sauce is made of" color="text-ember" />
+      <p class="text-4xl">
+        Just egg yolks and grated cheese. Salt and pepper to taste. The magic happens <span
+          class="text-ember">when hot pasta meets the eggs and cheese</span
+        > — that’s the cream you love.
+      </p>
+      <p class="font-display text-2xl italic">
+        Don’t let the egg mixture overcook, though — or you’ll end up with scrambled eggs in your
+        pasta. Not exactly what you want.
+      </p>
     </div>
   </section>
 

@@ -1,9 +1,10 @@
 ---
 interface Props {
   label: string;
+  color?: string;
 }
 
-const { label } = Astro.props;
+const { label, color } = Astro.props;
 ---
 
-<p class="font-body text-accent text-[13px] tracking-[0.34em] uppercase">{label}</p>
+<p class={`font-body ${color || "text-accent"} text-[13px] tracking-[0.34em] uppercase`}>{label}</p>
