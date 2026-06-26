@@ -2,9 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import Image from "../components/Image.astro";
+
+import spaghettiCarbonara from "../assets/italian-spaghetti-carbonara.jpg";
 ---
 
 <Layout>
   <Header />
   <Hero />
+
+  <Image
+    src={spaghettiCarbonara}
+    alt="Spaghetti Carbonara on a black plate"
+    copy="Photo by Javier Somoza, CC BY-SA 4.0"
+  />
 </Layout>
