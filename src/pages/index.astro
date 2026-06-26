@@ -103,39 +103,40 @@ const steps = [
 <Layout>
   <Header />
 
-  <Container class="mt-10">
-    <Hero />
-  </Container>
+  <main id="main">
+    <Container class="mt-10">
+      <Hero />
+    </Container>
 
-  <Container class="mt-10">
-    <Image
-      src={carbonara}
-      alt="Spaghetti Carbonara on a black plate"
-      copy="Photo by Javier Somoza"
-      fetchpriority="high"
-      loading="eager"
-    />
-  </Container>
+    <Container class="mt-10">
+      <Image
+        src={carbonara}
+        alt="Spaghetti Carbonara on a black plate"
+        copy="Photo by Javier Somoza"
+        fetchpriority="high"
+        loading="eager"
+      />
+    </Container>
 
-  <Container class="mt-15">
-    <section
-      id="what-is-carbonara"
-      class="grid w-full scroll-mt-14 gap-12 md:grid-cols-2 md:items-center"
-    >
-      <div class="space-y-4">
-        <Label label="The essence" />
-        <h2 class="font-display text-5xl font-bold">What is carbonara?</h2>
-        <p>
-          A classic dish from Rome that’s all about simplicity and quality. Made with just pasta,
-          eggs, Pecorino Romano, guanciale, and a good crack of black pepper — it’s pure comfort in
-          a bowl. No cream of any type, no onions. Yes, you heard that right.
-        </p>
-        <p>
-          Here you’ll learn the traditional, authentic recipe — and then how to vary it a little,
-          staying fairly traditional while being flexible on what you can actually find at the shop.
-        </p>
-      </div>
-      <div>
+    <Container class="mt-15">
+      <section
+        id="what-is-carbonara"
+        class="grid w-full scroll-mt-14 gap-12 md:grid-cols-2 md:items-center"
+      >
+        <div class="space-y-4">
+          <Label label="The essence" />
+          <h2 class="font-display text-5xl font-bold">What is carbonara?</h2>
+          <p>
+            A classic dish from Rome that’s all about simplicity and quality. Made with just pasta,
+            eggs, Pecorino Romano, guanciale, and a good crack of black pepper — it’s pure comfort
+            in a bowl. No cream of any type, no onions. Yes, you heard that right.
+          </p>
+          <p>
+            Here you’ll learn the traditional, authentic recipe — and then how to vary it a little,
+            staying fairly traditional while being flexible on what you can actually find at the
+            shop.
+          </p>
+        </div>
         <Image
           src={pecorino}
           alt="Pecorino cheese"
@@ -143,125 +144,125 @@ const steps = [
           fetchpriority="high"
           loading="eager"
         />
-      </div>
-    </section>
-  </Container>
-
-  <section id="sauce" class="bg-ink text-surface mt-20 scroll-mt-24 py-20">
-    <div class="mx-auto max-w-xl space-y-10 px-6 text-center">
-      <Label label="What the sauce is made of" color="text-ember" />
-      <p class="text-surface text-4xl">
-        Just egg yolks and grated cheese. Salt and pepper to taste. The magic happens <span
-          class="text-ember">when hot pasta meets the eggs and cheese</span
-        > — that’s the cream you love.
-      </p>
-      <p class="font-display text-surface text-2xl italic">
-        Don’t let the egg mixture overcook, though — or you’ll end up with scrambled eggs in your
-        pasta. Not exactly what you want.
-      </p>
-    </div>
-  </section>
-
-  <Container class="mt-20">
-    <section id="swaps" class="w-full scroll-mt-22 text-center">
-      <Heading
-        label="if you can't find it"
-        title="Ingredient replacements"
-        subtitle="Vary the recipe slightly and still get a great carbonara. Within reason."
-      />
-
-      <div class="mt-10 grid grid-cols-1 gap-6 text-left md:grid-cols-3">
-        {swaps.map((swap) => <Swap {...swap} />)}
-      </div>
-    </section>
-  </Container>
-
-  <Container class="mt-20">
-    <section class="w-full space-y-6 border-[1.5px] border-red-900 bg-red-100/40 p-10">
-      <h2
-        class="font-display before:text-accent text-4xl font-bold before:mr-4 before:content-['×']"
-      >
-        What <span class="italic">not</span> to put in carbonara
-      </h2>
-
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <div>
-          <p class="font-body text-accent text-base font-extrabold tracking-[0.12em] uppercase">
-            Heavy / Cooking cream
-          </p>
-          <p>
-            Absolutely not. Put it in if you want — but then don’t go around saying you make
-            carbonara, because you do not.
-          </p>
-        </div>
-        <div>
-          <p class="font-body text-accent text-base font-extrabold tracking-[0.12em] uppercase">
-            Onions
-          </p>
-          <p>
-            Unless you’re French, don’t. If you are French, feel free — but same rule as the cream
-            crowd: that’s not carbonara either.
-          </p>
-        </div>
-      </div>
-    </section>
-  </Container>
-
-  <section id="recipe" class="border-line bg-band mt-20 scroll-mt-10 border-t border-b py-20">
-    <div class="mx-auto max-w-sm px-6 text-center">
-      <Heading label="The Italian carbonara recipe" title="Let’s make magic in the kitchen" />
-    </div>
-
-    <Container class="mt-15">
-      <div class="grid w-full grid-cols-1 gap-12 md:grid-cols-[1fr_2fr]">
-        <div class="border-accent bg-surface sticky top-24 self-start border p-1">
-          <div class="border-line bg-surface border p-6">
-            <div class="mb-2 flex items-center justify-between">
-              <h3>Ingredients</h3>
-              <p class="text-muted text-sm font-semibold">For 2 persons</p>
-            </div>
-            <ul class="[&>li]:border-line mt-6 [&>li]:border-t [&>li]:py-3">
-              {ingredients.map((ingredient) => <Ingredient {...ingredient} />)}
-            </ul>
-          </div>
-        </div>
-
-        <div>
-          <div class="mb-2 flex items-center justify-between">
-            <h3>Instructions</h3>
-            <p class="text-muted text-sm font-semibold">The heat does most of the work.</p>
-          </div>
-
-          {steps.map((step) => <Step {...step} />)}
-        </div>
-      </div>
+      </section>
     </Container>
-  </section>
 
-  <section id="ending" class="mx-auto mt-20 max-w-2xl scroll-mt-24 px-6 text-center">
-    <Heading label="One last thing" title="“But what if I want to add cream?”" />
+    <section id="sauce" class="bg-ink text-surface mt-20 scroll-mt-24 py-20">
+      <div class="mx-auto max-w-xl space-y-10 px-6 text-center">
+        <Label label="What the sauce is made of" color="text-ember" />
+        <p class="text-surface text-4xl">
+          Just egg yolks and grated cheese. Salt and pepper to taste. The magic happens <span
+            class="text-ember">when hot pasta meets the eggs and cheese</span
+          > — that’s the cream you love.
+        </p>
+        <p class="font-display text-surface text-2xl italic">
+          Don’t let the egg mixture overcook, though — or you’ll end up with scrambled eggs in your
+          pasta. Not exactly what you want.
+        </p>
+      </div>
+    </section>
 
-    <p class="font-accent mt-10 text-2xl">
-      Well… just add it. But <span class="text-accent italic">you’re not making carbonara</span>.
-      You’re making pasta with cream and bacon. Don’t fool yourself.
-    </p>
-  </section>
+    <Container class="mt-20">
+      <section id="swaps" class="w-full scroll-mt-22 text-center">
+        <Heading
+          label="if you can't find it"
+          title="Ingredient replacements"
+          subtitle="Vary the recipe slightly and still get a great carbonara. Within reason."
+        />
 
-  <figure class="relative mx-auto mt-20">
-    <Picture
-      src={plate}
-      formats={["avif", "webp", "jpeg"]}
-      alt="Spaghetti carbonara in a black plate"
-      sizes="100vw"
-      decoding="async"
-      loading="lazy"
-    />
-    <figcaption
-      class="text-muted bg-surface/85 absolute right-3 bottom-3 px-3 py-1 text-sm backdrop-blur"
-    >
-      Photo by Leonardo Cirimbelli
-    </figcaption>
-  </figure>
+        <div class="mt-10 grid grid-cols-1 gap-6 text-left md:grid-cols-3">
+          {swaps.map((swap) => <Swap {...swap} />)}
+        </div>
+      </section>
+    </Container>
+
+    <Container class="mt-20">
+      <section class="w-full space-y-6 border-[1.5px] border-red-900 bg-red-100/40 p-10">
+        <h2
+          class="font-display before:text-accent text-4xl font-bold before:mr-4 before:content-['×']"
+        >
+          What <span class="italic">not</span> to put in carbonara
+        </h2>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div>
+            <p class="font-body text-accent text-base font-extrabold tracking-[0.12em] uppercase">
+              Heavy / Cooking cream
+            </p>
+            <p>
+              Absolutely not. Put it in if you want — but then don’t go around saying you make
+              carbonara, because you do not.
+            </p>
+          </div>
+          <div>
+            <p class="font-body text-accent text-base font-extrabold tracking-[0.12em] uppercase">
+              Onions
+            </p>
+            <p>
+              Unless you’re French, don’t. If you are French, feel free — but same rule as the cream
+              crowd: that’s not carbonara either.
+            </p>
+          </div>
+        </div>
+      </section>
+    </Container>
+
+    <section id="recipe" class="border-line bg-band mt-20 scroll-mt-10 border-t border-b py-20">
+      <div class="mx-auto max-w-sm px-6 text-center">
+        <Heading label="The Italian carbonara recipe" title="Let’s make magic in the kitchen" />
+      </div>
+
+      <Container class="mt-15">
+        <div class="grid w-full grid-cols-1 gap-12 md:grid-cols-[1fr_2fr]">
+          <div class="border-accent bg-surface sticky top-24 self-start border p-1">
+            <div class="border-line bg-surface border p-6">
+              <div class="mb-2 flex items-center justify-between">
+                <h3>Ingredients</h3>
+                <p class="text-muted text-sm font-semibold">For 2 persons</p>
+              </div>
+              <ul class="[&>li]:border-line mt-6 [&>li]:border-t [&>li]:py-3">
+                {ingredients.map((ingredient) => <Ingredient {...ingredient} />)}
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <div class="mb-2 flex items-center justify-between">
+              <h3>Instructions</h3>
+              <p class="text-muted text-sm font-semibold">The heat does most of the work.</p>
+            </div>
+
+            {steps.map((step) => <Step {...step} />)}
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <section id="ending" class="mx-auto mt-20 max-w-2xl scroll-mt-24 px-6 text-center">
+      <Heading label="One last thing" title="“But what if I want to add cream?”" />
+
+      <p class="font-accent mt-10 text-2xl">
+        Well… just add it. But <span class="text-accent italic">you’re not making carbonara</span>.
+        You’re making pasta with cream and bacon. Don’t fool yourself.
+      </p>
+    </section>
+
+    <figure class="relative mx-auto mt-20">
+      <Picture
+        src={plate}
+        formats={["avif", "webp", "jpeg"]}
+        alt="Spaghetti carbonara in a black plate"
+        sizes="100vw"
+        decoding="async"
+        loading="lazy"
+      />
+      <figcaption
+        class="text-muted bg-surface/85 absolute right-3 bottom-3 px-3 py-1 text-sm backdrop-blur"
+      >
+        Photo by Leonardo Cirimbelli
+      </figcaption>
+    </figure>
+  </main>
 
   <Footer />
 </Layout>
