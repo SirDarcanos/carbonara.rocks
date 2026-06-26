@@ -1,1 +1,34 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "EB Garamond", Georgia, serif;
+  --font-accent: "Spectral", Georgia, serif;
+
+  --color-background: #f3e8cf;
+  --color-surface: #f7efd9;
+  --color-band: #efe1c2;
+  --color-line: #d9c79f;
+
+  --color-ink: #2b1d12;
+  --color-muted: #5a4730;
+  --color-subtle: #8a7654;
+
+  --color-accent: #b5391f;
+  --color-ember: #e89a4a;
+  --color-amber: #c98a4a;
+}
+
+.dark {
+  --color-background: #1c130d;
+  --color-surface: #241813;
+  --color-band: #2f2118;
+  --color-line: #3d2c1f;
+
+  --color-ink: #f3e8cf;
+  --color-muted: #c2ad86;
+  --color-subtle: #948059;
+
+  --color-accent: #cf4a2c;
+}
