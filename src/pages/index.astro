@@ -52,7 +52,7 @@ const recipeSchema = {
 ---
 
 <Layout image={recipeImage}>
-  <script type="application/ld+json" slot="head" set:html={JSON.stringify(recipeSchema)} />
+  <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(recipeSchema)} />
 
   <Header />
 
