@@ -12,7 +12,7 @@ const { minimal = false } = Astro.props;
 
 <header class="bg-background/90 border-line sticky top-0 z-50 border-b backdrop-blur">
   <Container class={`flex items-center py-4 ${minimal ? "justify-center" : "justify-between"}`}>
-    <Logo />
+    <Logo href={minimal ? "/" : "#hero"} />
     {!minimal && <Nav />}
   </Container>
 </header>

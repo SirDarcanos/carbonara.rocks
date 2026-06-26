@@ -2,10 +2,16 @@
 import Wordmark from "./Wordmark.astro";
 import { Image } from "astro:assets";
 import monogram from "../assets/favicon.svg";
+
+interface Props {
+  href?: string;
+}
+
+const { href = "#hero" } = Astro.props;
 ---
 
 <div id="title" class="text-xl leading-[0.92] font-semibold tracking-tight md:text-2xl">
-  <a href="#hero" class="text-ink flex items-center gap-2">
+  <a href={href} class="text-ink flex items-center gap-2">
     <Image src={monogram} alt="" width={24} priority />
     <Wordmark />
   </a>
