@@ -12,10 +12,14 @@
 
   --color-ink: #2b1d12;
   --color-muted: #5a4730;
-  --color-subtle: #8a7654;
 
   --color-accent: #b5391f;
   --color-ember: #e89a4a;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-background);
 }
 
 @layer base {
