@@ -6,9 +6,31 @@ import Hero from "../components/Hero.astro";
 import Image from "../components/Image.astro";
 import Label from "../components/Label.astro";
 import Heading from "../components/Heading.astro";
+import Swap from "../components/Swap.astro";
 
 import carbonara from "../assets/italian-spaghetti-carbonara.jpg";
 import pecorino from "../assets/pecorino-romano-cheese.jpg";
+
+const swaps = [
+  {
+    from: "Guanciale",
+    to: "diced bacon",
+    description:
+      "Readily available and easy to find. The smoked variant works too — that’s just personal preference.",
+  },
+  {
+    from: "Spaghetti",
+    to: "any pasta",
+    description:
+      "Anything can replace spaghetti. My mom used to make it with penne, and nobody complained.",
+  },
+  {
+    from: "Pecorino",
+    to: "a hard cheese",
+    description:
+      "Hard to replace, but if the salty flavor is too much, use another hard cheese. Never anything creamy, fresh, or sweet.",
+  },
+];
 ---
 
 <Layout>
@@ -23,7 +45,7 @@ import pecorino from "../assets/pecorino-romano-cheese.jpg";
 
   <section
     id="what-is-carbonara"
-    class="mx-auto grid max-w-5xl gap-12 md:grid-cols-2 md:items-center"
+    class="mx-auto mt-15 grid max-w-5xl gap-12 md:grid-cols-2 md:items-center"
   >
     <div class="space-y-4">
       <Label label="The essence" />
@@ -64,6 +86,10 @@ import pecorino from "../assets/pecorino-romano-cheese.jpg";
       title="Ingredient replacements"
       subtitle="Vary the recipe slightly and still get a great carbonara. Within reason."
     />
+
+    <div class="mt-10 grid grid-cols-3 gap-6 text-left">
+      {swaps.map((swap) => <Swap {...swap} />)}
+    </div>
   </section>
 
   <Footer />
