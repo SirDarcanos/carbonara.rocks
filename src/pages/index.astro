@@ -1,10 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Image from "../components/Image.astro";
+import Label from "../components/Label.astro";
 
-import spaghettiCarbonara from "../assets/italian-spaghetti-carbonara.jpg";
+import carbonara from "../assets/italian-spaghetti-carbonara.jpg";
+import pecorino from "../assets/pecorino-romano-cheese.jpg";
 ---
 
 <Layout>
@@ -12,8 +15,29 @@ import spaghettiCarbonara from "../assets/italian-spaghetti-carbonara.jpg";
   <Hero />
 
   <Image
-    src={spaghettiCarbonara}
+    src={carbonara}
     alt="Spaghetti Carbonara on a black plate"
     copy="Photo by Javier Somoza, CC BY-SA 4.0"
   />
+
+  <section class="mx-auto grid max-w-5xl gap-12 md:grid-cols-2 md:items-center">
+    <div class="space-y-4">
+      <Label label="The essence" />
+      <h2 class="font-display text-5xl font-bold">What is carbonara?</h2>
+      <p>
+        A classic dish from Rome that’s all about simplicity and quality. Made with just pasta,
+        eggs, Pecorino Romano, guanciale, and a good crack of black pepper — it’s pure comfort in a
+        bowl. No cream of any type, no onions. Yes, you heard that right.
+      </p>
+      <p>
+        Here you’ll learn the traditional, authentic recipe — and then how to vary it a little,
+        staying fairly traditional while being flexible on what you can actually find at the shop.
+      </p>
+    </div>
+    <div>
+      <Image src={pecorino} alt="Pecorino cheese" copy="Photo by Jon Sullivan, Public Domain" />
+    </div>
+  </section>
+
+  <Footer />
 </Layout>
