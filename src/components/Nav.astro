@@ -3,7 +3,11 @@ import Button from "./Button.astro";
 ---
 
 <nav class="flex items-center gap-4 text-sm tracking-[0.14em] uppercase md:gap-10">
-  <a class="hover:text-accent hidden md:inline" href="#what-is-carbonara">What is it</a>
-  <a class="hover:text-accent hidden md:inline" href="#swaps">Swaps</a>
-  <Button href="#recipe">The recipe</Button>
+  <a
+    class="hover:text-accent hidden md:inline"
+    href="#what-is-carbonara"
+    data-umami-event="nav-what-is-it">What is it</a
+  >
+  <a class="hover:text-accent hidden md:inline" href="#swaps" data-umami-event="nav-swaps">Swaps</a>
+  <Button href="#recipe" data-umami-event="nav-the-recipe">The recipe</Button>
 </nav>

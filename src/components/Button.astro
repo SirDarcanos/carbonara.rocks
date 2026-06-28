@@ -2,8 +2,9 @@
 interface Props {
   href: string;
   variant?: "solid" | "outline";
+  [key: string]: any;
 }
-const { href, variant = "solid" } = Astro.props;
+const { href, variant = "solid", ...rest } = Astro.props;
 const base = "inline-block px-5 py-3 uppercase tracking-[0.12em] text-sm";
 const styles = {
   solid: "bg-accent text-white",
@@ -11,4 +12,4 @@ const styles = {
 };
 ---
 
-<a href={href} class={`${base} ${styles[variant]}`}><slot /></a>
+<a href={href} class={`${base} ${styles[variant]}`} {...rest}><slot /></a>

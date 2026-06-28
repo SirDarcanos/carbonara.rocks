@@ -22,8 +22,10 @@ import Button from "./Button.astro";
     <nav
       class="mt-10 flex flex-col items-center justify-center gap-4 text-sm font-semibold sm:flex-row"
     >
-      <Button href="#recipe">Jump to the recipe</Button>
-      <Button href="#what-is-carbonara" variant="outline">What is it</Button>
+      <Button href="#recipe" data-umami-event="hero-the-recipe">Jump to the recipe</Button>
+      <Button href="#what-is-carbonara" variant="outline" data-umami-event="hero-what-is-it"
+        >What is it</Button
+      >
     </nav>
   </div>
 </section>
