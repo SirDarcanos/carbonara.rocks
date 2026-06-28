@@ -1,0 +1,81 @@
+---
+const updated = "June 2026";
+---
+
+<dialog
+  id="privacy-dialog"
+  tabindex="-1"
+  class="bg-surface backdrop:bg-ink/60 m-auto w-[min(34rem,calc(100vw-2rem))] p-0 text-base outline-none"
+  aria-labelledby="privacy-title"
+>
+  <div class="max-h-[85vh] overflow-y-auto p-8">
+    <div class="flex items-start justify-between gap-4">
+      <h2 id="privacy-title" class="text-3xl">Privacy</h2>
+      <button
+        type="button"
+        data-privacy-close
+        aria-label="Close"
+        class="text-muted hover:text-ink -mt-1 cursor-pointer text-3xl leading-none"
+      >
+        &times;
+      </button>
+    </div>
+
+    <p class="mt-4">
+      This is a recipe site. It doesn't ask for your name, your email, or anything else about you.
+      Here's the full picture of what happens when you visit.
+    </p>
+
+    <h3 class="mt-6 text-xl">Analytics</h3>
+    <p class="mt-2">
+      We use <a href="https://umami.is/" rel="noopener noreferrer" target="_blank">Umami</a>, a
+      privacy-friendly analytics tool. It counts visits and shows us aggregated stats like page
+      views, referring sites, country, and browser type. It uses <strong>no cookies</strong>,
+      collects <strong>no personal data</strong>, and can't track you across other websites.
+    </p>
+
+    <h3 class="mt-6 text-xl">Fonts</h3>
+    <p class="mt-2">
+      The site loads typefaces from Google Fonts. To deliver them, your browser connects to Google's
+      servers, which means your IP address is shared with Google as part of that request.
+    </p>
+
+    <h3 class="mt-6 text-xl">That's it</h3>
+    <p class="mt-2">
+      No cookies, no accounts, no advertising, no data sold or shared with anyone else. If you have
+      a question, the recipe is the same whether you ask or not.
+    </p>
+
+    <p class="text-muted mt-6 text-sm">Last updated: {updated}</p>
+
+    <div class="mt-6 text-right">
+      <button
+        type="button"
+        data-privacy-close
+        class="bg-accent inline-block cursor-pointer px-5 py-3 text-sm tracking-[0.12em] text-white uppercase"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.getElementById("privacy-dialog") as HTMLDialogElement | null;
+  if (dialog) {
+    document.querySelectorAll("[data-privacy-open]").forEach((el) =>
+      el.addEventListener("click", () => {
+        dialog.showModal();
+        // showModal() autofocuses the first button (the ×); move focus to the
+        // dialog itself so nothing shows a focus ring on open.
+        dialog.focus();
+      }),
+    );
+    dialog
+      .querySelectorAll("[data-privacy-close]")
+      .forEach((el) => el.addEventListener("click", () => dialog.close()));
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  }
+</script>

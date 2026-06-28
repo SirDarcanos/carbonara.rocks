@@ -1,6 +1,7 @@
 ---
 import Wordmark from "./Wordmark.astro";
 import Container from "./Container.astro";
+import Privacy from "./Privacy.astro";
 ---
 
 <footer class="bg-ink">
@@ -8,6 +9,14 @@ import Container from "./Container.astro";
     <p class="text-surface text-3xl leading-[0.92] tracking-tight">
       <Wordmark />
     </p>
-    <p class="text-surface">Designed in Italy, without cream.</p>
+    <div class="flex flex-col items-center gap-2 md:items-end">
+      <p class="text-surface">
+        Designed in Italy, without cream &middot; <a
+          data-privacy-open
+          class="text-surface cursor-pointer hover:underline hover:underline-offset-4">Privacy</a
+        >
+      </p>
+    </div>
   </Container>
 </footer>
+<Privacy />
