@@ -49,6 +49,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:description" content={description} />
     {image && <meta name="twitter:image" content={image} />}
 
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="034b0b0f-527b-4cb5-897c-ecd9c702c5b4"></script>
+
     <slot name="head" />
   </head>
   <body>
