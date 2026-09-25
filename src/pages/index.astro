@@ -17,36 +17,34 @@ import carbonara from "../assets/italian-spaghetti-carbonara.jpg";
 import pecorino from "../assets/pecorino-romano-cheese.jpg";
 import plate from "../assets/carbonara-on-table.jpg";
 
-import { swaps, ingredients, steps } from "../data/recipe.ts";
+import { recipe, swaps, ingredients, steps } from "../data/recipe.ts";
 
 const recipeImage = new URL(carbonara.src, Astro.site).toString();
 
 const recipeSchema = {
   "@context": "https://schema.org",
   "@type": "Recipe",
-  name: "Authentic Spaghetti Carbonara",
+  "@id": new URL("/#recipe", Astro.site).toString(),
+  url: new URL("/#recipe", Astro.site).toString(),
+  mainEntityOfPage: new URL("/", Astro.site).toString(),
+  name: recipe.name,
   image: [recipeImage],
-  author: { "@type": "Person", name: "Nicola Mustone" },
+  author: { "@type": "Person", name: recipe.author },
   description:
     "The authentic Italian carbonara — eggs, pecorino, guanciale, and a good crack of black pepper. No cream, ever.",
   recipeCuisine: "Italian",
   recipeCategory: "Main course",
   keywords: "carbonara, authentic carbonara, carbonara without cream, guanciale, pecorino",
-  recipeYield: "2 servings",
-  prepTime: "PT10M",
-  cookTime: "PT15M",
-  totalTime: "PT25M",
-  recipeIngredient: [
-    "150 g spaghetti (or any pasta)",
-    "3 egg yolks",
-    "200 g guanciale (or diced bacon)",
-    "Pecorino Romano, to taste",
-    "Salt and black pepper, to taste",
-  ],
+  recipeYield: `${recipe.servings} servings`,
+  prepTime: `PT${recipe.prepMinutes}M`,
+  cookTime: `PT${recipe.cookMinutes}M`,
+  totalTime: `PT${recipe.prepMinutes + recipe.cookMinutes}M`,
+  recipeIngredient: ingredients.map((ingredient) => ingredient.schemaText),
   recipeInstructions: steps.map((step) => ({
     "@type": "HowToStep",
     name: step.title,
     text: step.description,
+    url: new URL(`/#step-${step.step}`, Astro.site).toString(),
   })),
 };
 ---
@@ -85,9 +83,9 @@ const recipeSchema = {
           <Label label="The essence" />
           <h2 class="font-display text-5xl font-bold">What is carbonara?</h2>
           <p>
-            A classic dish from Rome that’s all about simplicity and quality. Made with just pasta,
-            eggs, Pecorino Romano, guanciale, and a good crack of black pepper — it’s pure comfort
-            in a bowl. No cream of any type, no onions. Yes, you heard that right.
+            Carbonara is a Roman pasta dish made with eggs, Pecorino Romano, guanciale, and black
+            pepper. The creamy sauce comes from eggs and cheese mixed with hot pasta and a little
+            starchy pasta water, not cream. This recipe uses egg yolks and serves two.
           </p>
           <p>
             Here you’ll learn the traditional, authentic recipe — and then how to vary it a little,
@@ -95,13 +93,7 @@ const recipeSchema = {
             shop.
           </p>
         </div>
-        <Image
-          src={pecorino}
-          alt="Pecorino cheese"
-          copy="Photo by Jon Sullivan"
-          fetchpriority="high"
-          loading="eager"
-        />
+        <Image src={pecorino} alt="Pecorino cheese" copy="Photo by Jon Sullivan" loading="lazy" />
       </section>
     </Container>
 
@@ -169,8 +161,14 @@ const recipeSchema = {
       <div class="mx-auto max-w-sm px-6 text-center">
         <Heading
           label="The authentic Italian carbonara recipe"
-          title="Let’s make magic in the kitchen"
+          title="How to make carbonara without cream"
         />
+        <p class="text-muted mt-4 text-base">Recipe by {recipe.author}</p>
+        <p class="mt-2 text-base">
+          Prep: {recipe.prepMinutes} min · Cook: {recipe.cookMinutes} min · Total: {
+            recipe.prepMinutes + recipe.cookMinutes
+          } min
+        </p>
       </div>
 
       <Container class="mt-15">
@@ -179,7 +177,7 @@ const recipeSchema = {
             <div class="border-line bg-surface border p-6">
               <div class="mb-2 flex items-center justify-between">
                 <h3>Ingredients</h3>
-                <p class="text-muted text-sm font-semibold">For 2 persons</p>
+                <p class="text-muted text-sm font-semibold">For {recipe.servings} people</p>
               </div>
               <ul class="[&>li]:border-line mt-6 [&>li]:border-t [&>li]:py-3">
                 {ingredients.map((ingredient) => <Ingredient {...ingredient} />)}
