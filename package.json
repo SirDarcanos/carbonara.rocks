@@ -1,5 +1,6 @@
 {
   "name": "carbonara.rocks",
+  "homepage": "https://carbonara.rocks/",
   "type": "module",
   "version": "1.0.0",
   "engines": {
@@ -10,7 +11,9 @@
     "build": "astro build",
     "astro": "astro",
     "check": "astro check",
+    "search-console:snapshot": "gsc-snapshot --output local/search-console",
     "test:spacing": "npm run build && node --test tests/text-spacing.test.mjs",
+    "test": "npm run build && node --test tests/*.test.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -21,6 +24,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "gsc-snapshot": "0.2.0",
     "prettier": "^3.8.4",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",

@@ -2,6 +2,10 @@ dist/
 .astro/
 node_modules/
 
+# Local analytics exports and agent logs must never be published or committed.
+local/
+.pi/
+
 *.log*
 .env
 .env.production

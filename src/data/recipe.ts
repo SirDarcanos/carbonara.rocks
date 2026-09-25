@@ -8,6 +8,7 @@ export interface Ingredient {
   ingredient: string;
   description: string;
   quantity: string;
+  schemaText: string;
 }
 
 export interface Step {
@@ -15,6 +16,14 @@ export interface Step {
   title: string;
   description: string;
 }
+
+export const recipe = {
+  name: "Authentic Spaghetti Carbonara",
+  author: "Nicola Mustone",
+  servings: 2,
+  prepMinutes: 10,
+  cookMinutes: 15,
+};
 
 export const swaps: Swap[] = [
   {
@@ -42,26 +51,31 @@ export const ingredients: Ingredient[] = [
     ingredient: "Spaghetti",
     description: "or any pasta",
     quantity: "150 g / 5.5 oz",
+    schemaText: "150 g spaghetti (or any pasta)",
   },
   {
     ingredient: "Egg yolks",
     description: "1 per person, +1 per two",
     quantity: "3",
+    schemaText: "3 egg yolks",
   },
   {
     ingredient: "Pecorino romano",
     description: "go by heart, adjust to taste",
-    quantity: "q.b.",
+    quantity: "to taste",
+    schemaText: "Pecorino Romano, to taste",
   },
   {
     ingredient: "Guanciale",
     description: "or diced bacon, less if you like",
     quantity: "200 g / 7 oz",
+    schemaText: "200 g guanciale (or diced bacon)",
   },
   {
     ingredient: "Salt & black pepper",
     description: "careful — pecorino is salty",
     quantity: "to taste",
+    schemaText: "Salt and black pepper, to taste",
   },
 ];
 
