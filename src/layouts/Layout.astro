@@ -51,8 +51,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 
     <script
       defer
-      src="https://cloud.umami.is/script.js"
-      data-website-id="034b0b0f-527b-4cb5-897c-ecd9c702c5b4"></script>
+      src="https://cdn.usefathom.com/script.js"
+      data-site="XFPDVITO"
+      data-included-domains="carbonara.rocks,www.carbonara.rocks"></script>
 
     <slot name="head" />
   </head>
@@ -64,5 +65,17 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       Skip to content
     </a>
     <slot />
+    <script>
+      const analyticsWindow = window as Window & {
+        fathom?: { trackEvent: (name: string) => void };
+      };
+
+      document.querySelectorAll<HTMLElement>("[data-fathom-event]").forEach((element) => {
+        element.addEventListener("click", () => {
+          const event = element.dataset.fathomEvent;
+          if (event) analyticsWindow.fathom?.trackEvent(event);
+        });
+      });
+    </script>
   </body>
 </html>

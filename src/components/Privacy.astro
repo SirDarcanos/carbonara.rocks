@@ -1,5 +1,5 @@
 ---
-const updated = "June 2026";
+const updated = "September 2026";
 ---
 
 <dialog
@@ -10,7 +10,7 @@ const updated = "June 2026";
 >
   <div class="max-h-[85vh] overflow-y-auto p-8">
     <div class="flex items-start justify-between gap-4">
-      <h2 id="privacy-title" class="text-3xl">Privacy</h2>
+      <h2 id="privacy-title" class="text-3xl">Terms &amp; Privacy</h2>
       <button
         type="button"
         data-privacy-close
@@ -26,13 +26,31 @@ const updated = "June 2026";
       Here's the full picture of what happens when you visit.
     </p>
 
+    <h3 class="mt-6 text-xl">Terms of use</h3>
+    <p class="mt-2">
+      The recipe and cooking tips are provided for general information. Check ingredients for
+      allergens and follow food-safety guidance when preparing and storing food.
+    </p>
+
     <h3 class="mt-6 text-xl">Analytics</h3>
     <p class="mt-2">
-      We use <a href="https://umami.is/" rel="noopener noreferrer" target="_blank">Umami</a>, a
-      privacy-friendly analytics tool. It monitors navigation on the site and counts visits and
-      shows us aggregated stats like page views, referring sites, country, and browser type. It uses <strong
-        >no cookies</strong
-      >, collects <strong>no personal data</strong>, and can't track you across other websites.
+      We use <a href="https://usefathom.com/" rel="noopener noreferrer" target="_blank"
+        >Fathom Analytics</a
+      >
+      to understand how people use this site. It counts page views and clicks on the navigation, recipe
+      links, and this notice, and provides aggregate statistics such as referring sites, country, and
+      browser type. Fathom does not use tracking cookies or build advertising profiles across websites.
+      It briefly processes request information, including your IP address and user-agent, to create site-specific
+      visitor signatures and produce these statistics.
+    </p>
+    <p class="mt-2">
+      Read more in Fathom's <a
+        href="https://usefathom.com/legal/dpa"
+        rel="noopener noreferrer"
+        target="_blank">data processing agreement</a
+      > and <a href="https://usefathom.com/data" rel="noopener noreferrer" target="_blank"
+        >data journey</a
+      >.
     </p>
 
     <h3 class="mt-6 text-xl">Fonts</h3>
@@ -43,8 +61,8 @@ const updated = "June 2026";
 
     <h3 class="mt-6 text-xl">That's it</h3>
     <p class="mt-2">
-      No cookies, no accounts, no advertising, no data sold or shared with anyone else. If you have
-      a question, the recipe is the same whether you ask or not.
+      This site has no accounts or advertising, and we don't sell visitor data. The services
+      described above receive the information needed to provide analytics and fonts.
     </p>
 
     <p class="text-muted mt-6 text-sm">Last updated: {updated}</p>
