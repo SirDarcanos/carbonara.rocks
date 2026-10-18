@@ -6,13 +6,13 @@ Use the same pinned `gsc-snapshot@0.2.0` package as But Honestly to capture read
 
 ```sh
 # Latest 30 days through yesterday (may include provisional data)
-npm run search-console:snapshot
+pnpm run search-console:snapshot
 
 # Exact calendar month for a baseline
-npm run search-console:snapshot -- --start 2026-08-01 --end 2026-08-31
+pnpm run search-console:snapshot --start 2026-08-01 --end 2026-08-31
 
 # Explicit property if automatic discovery is ambiguous
-npm run search-console:snapshot -- --site sc-domain:carbonara.rocks --start 2026-08-01 --end 2026-08-31
+pnpm run search-console:snapshot --site sc-domain:carbonara.rocks --start 2026-08-01 --end 2026-08-31
 ```
 
 Property discovery uses `homepage` in `package.json`: it prefers the matching domain property, then a unique URL-prefix property available to the authenticated user. It fails rather than guessing among multiple matching properties. Dates are inclusive and interpreted in `America/Los_Angeles`.

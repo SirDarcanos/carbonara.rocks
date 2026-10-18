@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
-// Run after `npm run build`: source whitespace can disappear during compilation.
+// Run after `pnpm run build`: source whitespace can disappear during compilation.
 for (const page of ["index.html", "404.html"]) {
   test(`${page}: legal notice preserves spaces around links`, () => {
     const html = readFileSync(new URL(`../dist/${page}`, import.meta.url), "utf8");
