@@ -17,7 +17,7 @@ Search Console data had not been pulled at audit time. The owner has confirmed a
 - Spell out “to taste” instead of “q.b.” for English readers.
 - Enable large search image previews and provide social-image descriptions.
 - Lazy-load the below-the-fold cheese image instead of competing with the main image.
-- Test built HTML, discovery files, schema, and text spacing with `npm test`.
+- Test built HTML, discovery files, schema, and text spacing with `pnpm test`.
 
 These tests are not a substitute for Google's Rich Results Test or a browser performance audit.
 

@@ -24,15 +24,19 @@ Theme colors, fonts, and base typography live in [`src/styles/global.css`](src/s
 
 ## 🧞 Commands
 
-Run from the project root:
+Use Node.js 22.12 or newer and pnpm 11.20.0 (pinned in `package.json`). Run from the project root.
 
-| Command             | Action                                          |
-| :------------------ | :---------------------------------------------- |
-| `npm install`       | Install dependencies                            |
-| `npm run dev`       | Start the dev server at `localhost:4321`        |
-| `npm run build`     | Build the production site to `./dist/`          |
-| `npm run format`    | Format with Prettier (`format:check` to verify) |
-| `npm run astro ...` | Run Astro CLI commands (e.g. `astro check`)     |
+Use `pnpm install --frozen-lockfile` for reproducible installs in CI or hosting builds, followed by `pnpm run build`. Commit dependency changes with `pnpm-lock.yaml`; do not generate an npm lockfile.
+
+| Command              | Action                                          |
+| :------------------- | :---------------------------------------------- |
+| `pnpm install`       | Install dependencies                            |
+| `pnpm run dev`       | Start the dev server at `localhost:4321`        |
+| `pnpm run build`     | Build the production site to `./dist/`          |
+| `pnpm test`          | Build and run the test suite                    |
+| `pnpm run check`     | Run Astro diagnostics                           |
+| `pnpm run format`    | Format with Prettier (`format:check` to verify) |
+| `pnpm run astro ...` | Run Astro CLI commands (e.g. `astro check`)     |
 
 ## 📄 License
 
